@@ -1,0 +1,18 @@
+.base-node {
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.base-node-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.base-node-input {
+    width: 50%;
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
