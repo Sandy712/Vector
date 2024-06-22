@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { Handle, Position } from 'reactflow';
 
@@ -32,18 +31,48 @@ export const TextNode = ({ id, data }) => {
   }, [currText]);
 
   return (
-    <div style={{ width: 200, border: '1px solid black', padding: '10px' }}>
-      <div>
-        <span>Text</span>
+    <div style={{
+      width: 200,
+      border: '1px solid purple',
+      borderRadius: '15px',
+      backgroundColor: '#4b0082',
+      color: 'white',
+      padding: '1rem',
+      boxSizing: 'border-box'
+    }}>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: '1rem',
+        fontWeight: 'bold'
+      }}>
+        <span style={{ textAlign: 'center' }}>Text</span>
       </div>
-      <div>
+      <div style={{
+        marginBottom: '1rem',
+        borderTop: '1px solid black',
+        background: '#7b68ee',
+        padding: '0.5rem',
+        borderRadius: '10px',
+      }}>
         <label>
           Text:
           <textarea
             ref={textAreaRef}
             value={currText}
             onChange={handleTextChange}
-            style={{ width: '100%', boxSizing: 'border-box', overflow: 'hidden', resize: 'none' }}
+            style={{
+              width: '100%',
+              boxSizing: 'border-box',
+              overflow: 'hidden',
+              resize: 'none',
+              background: 'transparent',
+              color: 'white',
+              border: 'none',
+              outline: 'none',
+              textDecoration: 'underline',
+              textDecorationColor: 'green'
+            }}
           />
         </label>
       </div>
@@ -53,13 +82,14 @@ export const TextNode = ({ id, data }) => {
           type="target"
           position={Position.Left}
           id={`${id}-var-${variable}`}
-          style={{ top: 20 + index * 20 }}
+          style={{ top: 80 + index * 20, background: 'black' }}
         />
       ))}
       <Handle
         type="source"
         position={Position.Right}
         id={`${id}-output`}
+        style={{ background: 'black' }}
       />
     </div>
   );
